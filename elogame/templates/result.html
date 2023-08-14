@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="flex_container">
+    <div class="one">
+        <H2> Result </H2>
+    </div>
+    <div class="flex_form">
+        <div class="three ad"> hola</div>
+        <div class="game">
+            <img src="{{image1}}" alt="{{game1.title}}">
+            <h2>{{game1.title}}</h2>
+            <h3>{{game1.platform}}</h3>
+            <div class="flex_container">
+                <h2>{{game1.elo}}</h2>
+                {% if elogame1 > 0 %}
+                    <h2 class="green"> +{{elogame1}}</h2>
+                {% else %}
+                    <h2 class="red"> {{elogame1}}</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="game">
+            <img src="{{image2}}" alt="{{game2.title}}">
+            <h2>{{game2.title}}</h2>
+            <h3>{{game2.platform}}</h3>
+            <div class="flex_container">
+                <h2>{{game2.elo}}</h2>
+                {% if elogame2 > 0 %}
+                    <h2 class="green"> +{{elogame2}}</h2>
+                {% else %}
+                    <h2 class="red"> {{elogame2}}</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="three ad"> hola</div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% if user.is_authenticated %}
+<a href="/logout">Logout</a>
+{% else %}
+<a href="/login">login</a>
+<a href="/signup">Signup</a>
+{% endif %}

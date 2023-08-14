@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <section class="container">
+        <H2> Top 500 </H2>
+    </section>
+    <section class="container">
+        <article class="item">
+            <table>
+                {% for game in gamelist %}
+                <tr>
+                    <td>{{game.title}}</td>
+                    <td>{{game.platform}}</td>
+                    <td>{{game.elo}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+           
+        </article>
+    </section>
+
+</main>
+
+{% endblock %}

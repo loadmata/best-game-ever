@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="flex_container">
+    <div class="one">
+        <h2>which is the best game?</h2>
+    </div>
+    <div class="two">
+        <div class="three">
+            <form class="flex_form" method="POST" class="container">
+                {% csrf_token %}
+                <input type="hidden" name="duel" value="{{token}}">
+                <div class="game">
+                    <input type="hidden" name="game1" value="{{game1.pk}}">
+                    <h3>{{game1.title}}</h3>
+                    <input type="image" src="{{image1}}" name="button_1" formaction="result/"/>
+                    <h3>{{game1.platform}}</h3>
+                </div>
+                <div class="game">
+                    <input type="hidden" name="game2" value="{{game2.pk}}">
+                    <h3>{{game2.title}}</h3>
+                    <input type="image" src="{{image2}}" name="button_2" formaction="result/"/>
+                    <h3>{{game2.platform}}</h3>
+                </div>
+            </form>
+        </div>
+    </div>   
+</div>
+
+{% endblock %}

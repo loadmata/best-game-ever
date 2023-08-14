@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Video Game Ever</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="container">
+        <h1>The Best Video Game Ever</h1>
+    </header>
+    <nav class="topnav" id="myTopnav">
+        <a class="contenedor" href="/">Home</a>
+        <a href="/play">Play</a>
+        <a href="/rankings">Rankings</a>
+        <a href="/about">About</a>
+
+  
+        {% if user.is_authenticated %}
+            <a href="/logout">Logout</a>
+        {% else %}
+            <a href="/login">login</a>
+            <a href="/signup">Signup</a>
+        {% endif %}
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+        {% block content %}
+
+        {% endblock %}
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

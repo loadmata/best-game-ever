@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<main>
+    <section class="container">
+        <h1>rankings</h1>
+    </section>
+        <h1>The best game ever is</h1>
+        <h2>{{bestgame.title}}</h2>
+        <img src="{{bestgameimage}}" alt="text describing the image">
+    </section>
+
+    <section class="container">
+        <h2>Other rankings</h2>
+        <a href="/rankings/top500">
+            <img src="/media/images/App_Top500_button.jpg" alt="text describing the image">
+            </a>
+    </section>
+</main>
+
+{% endblock %}
